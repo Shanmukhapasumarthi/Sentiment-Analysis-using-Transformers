@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Transformer Sentiment Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+    <h1>🎬 Sentiment Analyzer</h1>
+    <p class="subtitle">Powered by Mini Transformer</p>
+
+    <form method="POST">
+        <textarea name="review" placeholder="Enter your movie review here..." required></textarea>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result 
+            {% if prediction == 'POSITIVE' %}
+                positive
+            {% else %}
+                negative
+            {% endif %}
+        ">
+            <h2>{{ prediction }}</h2>
+            <p>Confidence: {{ confidence }}%</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
