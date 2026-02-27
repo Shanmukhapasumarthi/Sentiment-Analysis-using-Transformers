@@ -21,7 +21,7 @@ sentiment classification on the IMDB movie reviews dataset.
 - Optimizer: Adam
 - Loss: CrossEntropyLoss
 - Batch Size: 32
-- Epochs: 10
+- Epochs: 25
 
 ## How to Run
 ```bash
